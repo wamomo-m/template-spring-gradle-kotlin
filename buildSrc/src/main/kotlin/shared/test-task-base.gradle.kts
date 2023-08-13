@@ -9,11 +9,12 @@ plugins {
 testing.suites.named<JvmTestSuite>("test") {
     useJUnitJupiter()
 
+    val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
     dependencies {
         testing {
             dependencies {}
         }
-        implementation("org.springframework.boot:spring-boot-starter-test:3.1.2")
+        implementation(versionCatalog.findLibrary("spring-boot-starter-test").get())
     }
 }
 
