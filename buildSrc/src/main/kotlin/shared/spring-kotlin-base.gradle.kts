@@ -25,4 +25,5 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 dependencies {
     implementation(versionCatalog.findLibrary("spring-boot-starter").get())
+    implementation(versionCatalog.findLibrary("kotlin-result").get())
 }

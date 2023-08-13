@@ -12,6 +12,9 @@ testing.suites.named<JvmTestSuite>("test") {
     val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
     dependencies {
         implementation(versionCatalog.findLibrary("spring-boot-starter-test").get())
+        implementation(versionCatalog.findLibrary("kotest-runner-junit5").get())
+        implementation(versionCatalog.findLibrary("mockk").get())
+        implementation(versionCatalog.findLibrary("archunit-junit5").get())
     }
 }
 

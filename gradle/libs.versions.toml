@@ -1,12 +1,28 @@
 [versions]
 kotlin = "1.9.0"
 spring = "3.1.2"
+ktlint = "11.5.1"
+result = "1.1.18"
+docker-compose = "0.17.4"
+
+# for test
+kotest = "5.6.2"
+mockk = "1.13.5"
+archunit = "1.1.0"
 
 [libraries]
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
-spring-boot-gradle-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring" }
 spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring" }
+kotlin-result = { module = "com.michael-bull.kotlin-result:kotlin-result", version.ref = "result" }
 
 # for test
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+archunit-junit5 = { module = "com.tngtech.archunit:archunit-junit5", version.ref = "archunit" }
+
+# plugin
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
+spring-boot-gradle-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring" }
+ktlint-gradle = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint" }
+gradle-docker-compose-plugin = { module = "com.avast.gradle:gradle-docker-compose-plugin", version.ref = "docker-compose" }
