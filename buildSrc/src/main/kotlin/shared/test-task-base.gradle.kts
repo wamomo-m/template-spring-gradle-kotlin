@@ -11,9 +11,6 @@ testing.suites.named<JvmTestSuite>("test") {
 
     val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
     dependencies {
-        testing {
-            dependencies {}
-        }
         implementation(versionCatalog.findLibrary("spring-boot-starter-test").get())
     }
 }
