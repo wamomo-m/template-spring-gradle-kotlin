@@ -7,15 +7,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: set up JDK
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: temurin
           cache: gradle
 
-      - name: execute ktlint
+      - name: Execute ktlintCheck
         run: ./gradlew ktlintCheck

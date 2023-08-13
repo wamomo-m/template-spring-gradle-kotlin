@@ -11,20 +11,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: set up JDK
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: adopt
           cache: gradle
 
-      - name: execute unit test
+      - name: Execute unit test
         run: ./gradlew test
 
-      - name: publish unit test report
+      - name: Publish unit test report
         if: failure()
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
