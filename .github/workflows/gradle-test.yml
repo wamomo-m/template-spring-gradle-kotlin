@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -27,3 +27,5 @@ jobs:
         with:
           check_name: unit test report
           comment_mode: off
+          files: |
+            **/build/test-results/test/TEST-*.xml
