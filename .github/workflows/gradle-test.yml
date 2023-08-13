@@ -1,0 +1,29 @@
+name: Gradle Test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: adopt
+          cache: gradle
+
+      - name: execute unit test
+        run: ./gradlew test
+
+      - name: publish unit test report
+        if: failure()
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          check_name: unit test report
+          comment_mode: off
