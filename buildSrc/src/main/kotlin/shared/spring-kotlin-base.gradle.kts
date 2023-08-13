@@ -9,6 +9,8 @@ repositories {
     mavenCentral()
 }
 
+group = "sample"
+
 kotlin {
     jvmToolchain {
         languageVersion.set(JavaLanguageVersion.of(17))

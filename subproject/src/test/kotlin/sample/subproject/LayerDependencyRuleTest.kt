@@ -1,4 +1,4 @@
-package subproject.sample
+package sample.subproject
 
 import com.tngtech.archunit.core.importer.ImportOption
 import com.tngtech.archunit.junit.AnalyzeClasses
@@ -7,7 +7,7 @@ import com.tngtech.archunit.lang.ArchRule
 import com.tngtech.archunit.library.Architectures
 
 @AnalyzeClasses(
-    packages = ["subproject.sample"],
+    packages = ["sample.subproject"],
     importOptions = [ImportOption.DoNotIncludeTests::class]
 )
 class LayerDependencyRuleTest {
@@ -15,7 +15,7 @@ class LayerDependencyRuleTest {
     val layeredTest: ArchRule = Architectures.layeredArchitecture()
         .consideringAllDependencies()
         .apply {
-            layer("Application").definedBy("subproject.sample")
+            layer("Application").definedBy("sample.subproject")
         }
         .apply {
             // Application はどこからも参照されない
