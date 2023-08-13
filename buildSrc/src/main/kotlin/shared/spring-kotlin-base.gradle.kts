@@ -3,6 +3,7 @@ package shared
 plugins {
     kotlin("jvm")
     kotlin("plugin.spring")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 repositories {
@@ -20,13 +21,15 @@ kotlin {
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = "17"
+        allWarningsAsErrors = true
+        freeCompilerArgs = listOf("-Xjsr305=strict")
     }
 }
 
 val versionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 dependencies {
-    implementation(versionCatalog.findLibrary("spring-boot-starter").get())
+    implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation(versionCatalog.findLibrary("kotlin-result").get())
 }

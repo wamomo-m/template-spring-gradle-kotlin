@@ -3,9 +3,7 @@ package sample.subproject
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication(
-    scanBasePackageClasses = [Application::class]
-)
+@SpringBootApplication
 class Application
 
 fun main(args: Array<String>) {
