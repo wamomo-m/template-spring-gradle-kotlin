@@ -2,4 +2,4 @@ services:
   # このアプリケーションは docker を使用しないが docker-compose 自体はよく使用するのでテンプレートに含める
   python:
     container_name: spring-gradle-kotlin-template.python
-    image: python:3.11
+    image: python:3.12
