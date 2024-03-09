@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.9.0"
+kotlin = "1.9.23"
 spring-boot = "3.1.2"
 ktlint = "11.5.1"
 docker-compose = "0.17.4"
